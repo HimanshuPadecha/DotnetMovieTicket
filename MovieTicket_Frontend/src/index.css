@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-cinema-950: #07070c;
+  --color-cinema-900: #0d0d16;
+  --color-cinema-800: #151522;
+  --color-cinema-700: #1e1e30;
+  --color-cinema-600: #2a2a42;
+  --color-accent: #e50914;
+  --color-accent-soft: #ff4757;
+  --color-gold: #f5c518;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(229, 9, 20, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(245, 197, 24, 0.06), transparent),
+    var(--color-cinema-950);
+  color: #f4f4f8;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #33334d;
+  border-radius: 999px;
+}
+
+.seat-btn {
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.seat-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
